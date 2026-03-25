@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dawn Oh</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background: #F8FAFC;
+      color: #1a1a1a;
+      font-family: 'Pretendard', -apple-system, sans-serif;
+      font-size: 14px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 48px;
+      background: #F8FAFC;
+      border-bottom: 1px solid #e2e8f0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-inner {
+      width: 700px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* 모바일: 700px 미만일 때 좌우 패딩 */
+    @media (max-width: 739px) {
+      .nav-inner {
+        width: 100%;
+        padding: 0 20px;
+      }
+    }
+
+    .nav-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: #1a1a1a;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-icons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-icon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #1a1a1a;
+      background: #F8FAFC;
+      transition: background 0.12s;
+    }
+
+    .nav-icon-btn:hover { background: #eef2f7; }
+
+    .nav-icon-btn svg {
+      width: 13px;
+      height: 13px;
+      stroke: #1a1a1a;
+      fill: none;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ─── MAIN CONTAINER ─── */
+    main {
+      padding-top: 48px;
+    }
+
+    .container {
+      width: 700px;
+      margin: 0 auto;
+      padding: 60px 0 120px;
+    }
+
+    @media (max-width: 739px) {
+      .container {
+        width: 100%;
+        padding: 48px 20px 80px;
+      }
+    }
+
+    /* ─── HERO ─── */
+    .hero-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: -0.02em;
+      margin-bottom: 5px;
+      line-height: 1.4;
+    }
+
+    .hero-meta-row {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      color: #888;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .hero-arrow {
+      margin: 0 7px;
+      color: #888;
+    }
+
+    .hero-time {
+      color: #1a1a1a;
+      font-weight: 500;
+      font-size: 13px;
+    }
+
+    .hero-updated {
+      display: block;
+      font-size: 12px;
+      color: #aaa;
+      font-weight: 400;
+      margin-top: 3px;
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 24px 0;
+    }
+
+    /* ─── BIO ─── */
+    /* 피그마 줄바꿈 재현: white-space pre-wrap + 고정 너비 */
+    .bio-block {
+      font-size: 14px;
+      font-weight: 400;
+      color: #1a1a1a;
+      line-height: 1.85;
+      margin-bottom: 18px;
+      /* 줄바꿈을 HTML <br>로 제어 */
+    }
+
+    .bio-block:last-child { margin-bottom: 0; }
+
+    .bio-block a {
+      color: #1a1a1a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #1a1a1a;
+    }
+
+    .bio-block a:hover { opacity: 0.55; }
+
+    /* ─── STATUS ─── */
+    .status { display: flex; flex-direction: column; }
+
+    .status-row {
+      display: flex;
+      align-items: baseline;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .status-label {
+      width: 80px;
+      flex-shrink: 0;
+      color: #aaa;
+      font-weight: 400;
+    }
+
+    .status-arrow {
+      color: #aaa;
+      margin-right: 10px;
+      font-size: 12px;
+    }
+
+    .status-val {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      flex-wrap: wrap;
+      color: #1a1a1a;
+    }
+
+    .status-val .plain { font-weight: 400; }
+
+    .status-val a {
+      color: #1a1a1a;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+    }
+
+    .status-val a:hover { opacity: 0.55; }
+
+    .sep {
+      color: #ccc;
+      font-size: 11px;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav-inner">
+      <a class="nav-name" href="#">Dawn Oh</a>
+      <div class="nav-icons">
+        <a class="nav-icon-btn" href="https://drive.google.com/file/d/1FSuka-_tsfJSrbCePcSQhgwZ22JB38tT/view?usp=share_link" target="_blank" rel="noopener" title="Resume" aria-label="Resume">
+          <svg viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <line x1="10" y1="9" x2="8" y2="9"/>
+          </svg>
+        </a>
+        <a class="nav-icon-btn" href="https://www.linkedin.com/in/ohdonghun" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- HERO -->
+      <section class="hero" style="margin-bottom:0">
+        <h1 class="hero-name">Dawn Donghun Oh</h1>
+        <div class="hero-meta-row">
+          <span>Based in Seoul</span>
+          <span class="hero-arrow">→</span>
+          <span class="hero-time" id="live-time"></span>
+        </div>
+        <span class="hero-updated">Updated Mar 24, 2026</span>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- BIO — 줄바꿈 피그마 그대로 -->
+      <section class="bio">
+
+        <p class="bio-block">
+          I currently work at <a href="https://banf.ai/en" target="_blank" rel="noopener">BANF</a>, a smart tire sensor company, where I lead the design of our Fleet Management System, BANFLEET. My main focus is turning massive amounts of tire sensor data into clear, easy-to-understand visuals for everyone.
+        </p>
+
+        <p class="bio-block">
+          Alongside this, I led the design for a consumer tire platform called <a href="https://www.goosetire.com" target="_blank" rel="noopener">GooseTire</a>. I worked on everything from early planning and branding to creating a simple, one-stop buying process. I also built the admin dashboard to help run the business smoothly.
+        </p>
+
+        <p class="bio-block">
+          Before that, I designed the UX/UI for 'Meta-Fab' at <a href="https://zinnotech.com" target="_blank" rel="noopener">Zinnotech</a>. It is a teamwork tool for highly secure places like semiconductor factories. I designed a remote experience that helps outside experts and inside workers communicate safely and naturally, just as if they were in the same room.
+        </p>
+
+        <p class="bio-block">
+          To me, design is much more than just a job. I truly love the process of taking cold, complex technologies and shaping them into highly polished products that naturally fit into people's everyday lives.
+        </p>
+
+        <p class="bio-block">
+          You can reach me at <span id="email-text"></span>
+        </p>
+
+      </section>
+
+      <hr class="divider" />
+
+      <!-- STATUS -->
+      <section class="status">
+        <div class="status-row">
+          <span class="status-label">Currently</span>
+          <span class="status-arrow">→</span>
+          <span class="status-val">
+            <span class="plain">Design Lead @</span>
+            <a href="https://banf.ai/en" target="_blank" rel="noopener">BANF</a>
+          </span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">Previously</span>
+          <span class="status-arrow">→</span>
+          <span class="status-val">
+            <a href="https://www.benev.com" target="_blank" rel="noopener">BENEV</a>
+            <span class="sep">•</span>
+            <a href="https://visitinc.kr/#/main" target="_blank" rel="noopener">VISIT</a>
+            <span class="sep">•</span>
+            <a href="https://zinnotech.com" target="_blank" rel="noopener">Zinnotech</a>
+          </span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">Delivering</span>
+          <span class="status-arrow">→</span>
+          <span class="status-val">
+            <span class="plain">Joy</span>
+          </span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // 이메일 렌더링 (Cloudflare 난독화 우회)
+    (function() {
+      const u = 'dhoh9314';
+      const d = 'gmail.com';
+      const el = document.getElementById('email-text');
+      const a = document.createElement('a');
+      a.href = 'mailto:' + u + '@' + d;
+      a.textContent = u + '@' + d;
+      a.style.color = '#1a1a1a';
+      a.style.textDecoration = 'underline';
+      a.style.textUnderlineOffset = '2px';
+      el.appendChild(a);
+    })();
+
+    function updateTime() {
+      const t = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'Asia/Seoul',
+        hour: '2-digit',
+        min
