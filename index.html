@@ -260,7 +260,7 @@
         <div class="hero-meta-row">
           <span>Based in Seoul</span>
           <span class="hero-arrow">→</span>
-          <span class="hero-time" id="live-time"></span>
+          <span class="hero-time" id="live-time">-</span>
         </div>
         <span class="hero-updated">Updated Mar 24, 2026</span>
       </section>
@@ -287,7 +287,7 @@
         </p>
 
         <p class="bio-block">
-          You can reach me at <span id="email-text"></span>
+          You can reach me at <a href="mailto:dhoh9314&#64;gmail.com" style="color:#1a1a1a;text-decoration:underline;text-underline-offset:2px;">dhoh9314&#64;gmail.com</a>
         </p>
 
       </section>
@@ -328,20 +328,6 @@
   </main>
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // 이메일 렌더링 (Cloudflare 난독화 우회)
-    (function() {
-      const u = 'dhoh9314';
-      const d = 'gmail.com';
-      const el = document.getElementById('email-text');
-      const a = document.createElement('a');
-      a.href = 'mailto:' + u + '@' + d;
-      a.textContent = u + '@' + d;
-      a.style.color = '#1a1a1a';
-      a.style.textDecoration = 'underline';
-      a.style.textUnderlineOffset = '2px';
-      el.appendChild(a);
-    })();
-
     function updateTime() {
       const t = new Intl.DateTimeFormat('en-US', {
         timeZone: 'Asia/Seoul',
