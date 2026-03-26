@@ -6,11 +6,7 @@
   <title>Dawn Oh</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     html, body {
       background: #F8FAFC;
@@ -21,7 +17,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ─── NAV ─── */
+    /* NAV */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -32,7 +28,6 @@
       display: flex;
       align-items: center;
     }
-
     .nav-inner {
       width: 700px;
       margin: 0 auto;
@@ -40,15 +35,9 @@
       align-items: center;
       justify-content: space-between;
     }
-
-    /* 모바일: 700px 미만일 때 좌우 패딩 */
     @media (max-width: 739px) {
-      .nav-inner {
-        width: 100%;
-        padding: 0 20px;
-      }
+      .nav-inner { width: 100%; padding: 0 20px; }
     }
-
     .nav-name {
       font-size: 14px;
       font-weight: 500;
@@ -56,19 +45,12 @@
       text-decoration: none;
       letter-spacing: -0.01em;
     }
-
-    .nav-icons {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
+    .nav-icons { display: flex; align-items: center; gap: 8px; }
     .nav-icon-btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 28px;
-      height: 28px;
+      width: 28px; height: 28px;
       border: 1px solid #e0e0e0;
       border-radius: 5px;
       text-decoration: none;
@@ -76,38 +58,27 @@
       background: #F8FAFC;
       transition: background 0.12s;
     }
-
     .nav-icon-btn:hover { background: #eef2f7; }
-
     .nav-icon-btn svg {
-      width: 13px;
-      height: 13px;
-      stroke: #1a1a1a;
-      fill: none;
+      width: 13px; height: 13px;
+      stroke: #1a1a1a; fill: none;
       stroke-width: 1.7;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-    /* ─── MAIN CONTAINER ─── */
-    main {
-      padding-top: 48px;
-    }
-
+    /* CONTAINER */
+    main { padding-top: 48px; }
     .container {
       width: 700px;
       margin: 0 auto;
       padding: 60px 0 120px;
     }
-
     @media (max-width: 739px) {
-      .container {
-        width: 100%;
-        padding: 48px 20px 80px;
-      }
+      .container { width: 100%; padding: 48px 20px 80px; }
     }
 
-    /* ─── HERO ─── */
+    /* HERO */
     .hero-name {
       font-size: 15px;
       font-weight: 700;
@@ -116,7 +87,6 @@
       margin-bottom: 5px;
       line-height: 1.4;
     }
-
     .hero-meta-row {
       display: flex;
       align-items: center;
@@ -125,18 +95,8 @@
       font-weight: 400;
       line-height: 1.6;
     }
-
-    .hero-arrow {
-      margin: 0 7px;
-      color: #888;
-    }
-
-    .hero-time {
-      color: #1a1a1a;
-      font-weight: 500;
-      font-size: 13px;
-    }
-
+    .hero-arrow { margin: 0 7px; color: #888; }
+    .hero-time { color: #1a1a1a; font-weight: 500; font-size: 13px; }
     .hero-updated {
       display: block;
       font-size: 12px;
@@ -145,59 +105,45 @@
       margin-top: 3px;
     }
 
-    /* ─── DIVIDER ─── */
+    /* DIVIDER */
     .divider {
       border: none;
       border-top: 1px solid #e2e8f0;
       margin: 24px 0;
     }
 
-    /* ─── BIO ─── */
-    /* 피그마 줄바꿈 재현: white-space pre-wrap + 고정 너비 */
+    /* BIO */
     .bio-block {
       font-size: 14px;
       font-weight: 400;
       color: #1a1a1a;
       line-height: 1.85;
       margin-bottom: 18px;
-      /* 줄바꿈을 HTML <br>로 제어 */
     }
-
     .bio-block:last-child { margin-bottom: 0; }
-
     .bio-block a {
       color: #1a1a1a;
       text-decoration: underline;
       text-underline-offset: 2px;
       text-decoration-thickness: 1px;
-      text-decoration-color: #1a1a1a;
     }
-
     .bio-block a:hover { opacity: 0.55; }
 
-    /* ─── STATUS ─── */
+    /* STATUS */
     .status { display: flex; flex-direction: column; }
-
     .status-row {
       display: flex;
       align-items: baseline;
       font-size: 13px;
       line-height: 1.9;
     }
-
     .status-label {
       width: 80px;
       flex-shrink: 0;
       color: #aaa;
       font-weight: 400;
     }
-
-    .status-arrow {
-      color: #aaa;
-      margin-right: 10px;
-      font-size: 12px;
-    }
-
+    .status-arrow { color: #aaa; margin-right: 10px; font-size: 12px; }
     .status-val {
       display: flex;
       align-items: baseline;
@@ -205,9 +151,7 @@
       flex-wrap: wrap;
       color: #1a1a1a;
     }
-
     .status-val .plain { font-weight: 400; }
-
     .status-val a {
       color: #1a1a1a;
       font-weight: 600;
@@ -215,14 +159,8 @@
       text-underline-offset: 2px;
       text-decoration-thickness: 1px;
     }
-
     .status-val a:hover { opacity: 0.55; }
-
-    .sep {
-      color: #ccc;
-      font-size: 11px;
-      font-weight: 400;
-    }
+    .sep { color: #ccc; font-size: 11px; font-weight: 400; }
   </style>
 </head>
 <body>
@@ -255,41 +193,35 @@
     <div class="container">
 
       <!-- HERO -->
-      <section class="hero" style="margin-bottom:0">
+      <section style="margin-bottom:0">
         <h1 class="hero-name">Dawn Donghun Oh</h1>
         <div class="hero-meta-row">
           <span>Based in Seoul</span>
-          <span class="hero-arrow">→</span>
-          <span class="hero-time" id="live-time">-</span>
+          <span class="hero-arrow">&#8594;</span>
+          <span class="hero-time" id="live-time"></span>
         </div>
         <span class="hero-updated">Updated Mar 24, 2026</span>
       </section>
 
       <hr class="divider" />
 
-      <!-- BIO — 줄바꿈 피그마 그대로 -->
+      <!-- BIO -->
       <section class="bio">
-
         <p class="bio-block">
           I currently work at <a href="https://banf.ai/en" target="_blank" rel="noopener">BANF</a>, a smart tire sensor company, where I lead the design of our Fleet Management System, BANFLEET. My main focus is turning massive amounts of tire sensor data into clear, easy-to-understand visuals for everyone.
         </p>
-
         <p class="bio-block">
           Alongside this, I led the design for a consumer tire platform called <a href="https://www.goosetire.com" target="_blank" rel="noopener">GooseTire</a>. I worked on everything from early planning and branding to creating a simple, one-stop buying process. I also built the admin dashboard to help run the business smoothly.
         </p>
-
         <p class="bio-block">
           Before that, I designed the UX/UI for 'Meta-Fab' at <a href="https://zinnotech.com" target="_blank" rel="noopener">Zinnotech</a>. It is a teamwork tool for highly secure places like semiconductor factories. I designed a remote experience that helps outside experts and inside workers communicate safely and naturally, just as if they were in the same room.
         </p>
-
         <p class="bio-block">
           To me, design is much more than just a job. I truly love the process of taking cold, complex technologies and shaping them into highly polished products that naturally fit into people's everyday lives.
         </p>
-
-        <p class="bio-block">
-          You can reach me at <a href="mailto:dhoh9314&#64;gmail.com" style="color:#1a1a1a;text-decoration:underline;text-underline-offset:2px;">dhoh9314&#64;gmail.com</a>
+        <p class="bio-block" id="email-line">
+          You can reach me at
         </p>
-
       </section>
 
       <hr class="divider" />
@@ -298,7 +230,7 @@
       <section class="status">
         <div class="status-row">
           <span class="status-label">Currently</span>
-          <span class="status-arrow">→</span>
+          <span class="status-arrow">&#8594;</span>
           <span class="status-val">
             <span class="plain">Design Lead @</span>
             <a href="https://banf.ai/en" target="_blank" rel="noopener">BANF</a>
@@ -306,20 +238,40 @@
         </div>
         <div class="status-row">
           <span class="status-label">Previously</span>
-          <span class="status-arrow">→</span>
+          <span class="status-arrow">&#8594;</span>
           <span class="status-val">
             <a href="https://www.benev.com" target="_blank" rel="noopener">BENEV</a>
-            <span class="sep">•</span>
+            <span class="sep">&#8226;</span>
             <a href="https://visitinc.kr/#/main" target="_blank" rel="noopener">VISIT</a>
-            <span class="sep">•</span>
+            <span class="sep">&#8226;</span>
             <a href="https://zinnotech.com" target="_blank" rel="noopener">Zinnotech</a>
           </span>
         </div>
         <div class="status-row">
           <span class="status-label">Delivering</span>
-          <span class="status-arrow">→</span>
+          <span class="status-arrow">&#8594;</span>
           <span class="status-val">
             <span class="plain">Joy</span>
+          </span>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- SIDE PROJECTS -->
+      <section class="status">
+        <div class="status-row">
+          <span class="status-label">Have Fun</span>
+          <span class="status-arrow">&#8594;</span>
+          <span class="status-val">
+            <a href="https://vibetub.vercel.app" target="_blank" rel="noopener">Vibetub</a>
+          </span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">wisdom!</span>
+          <span class="status-arrow">&#8594;</span>
+          <span class="status-val">
+            <a href="https://dhoh9314.github.io/hwatu-fortune/" target="_blank" rel="noopener">Korean Tarot</a>
           </span>
         </div>
       </section>
@@ -327,9 +279,38 @@
     </div>
   </main>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
+    // 이메일 — JS로 동적 생성해서 스팸봇 차단
+    (function() {
+      var p1 = 'dhoh';
+      var p2 = '9314';
+      var p3 = 'gmail';
+      var p4 = 'com';
+      var addr = p1 + p2 + '\u0040' + p3 + '\u002E' + p4;
+      var el = document.getElementById('email-line');
+      var a = document.createElement('a');
+      a.href = 'mai' + 'lto:' + addr;
+      a.textContent = addr;
+      a.style.cssText = 'color:#1a1a1a;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;';
+      el.appendChild(document.createTextNode(' '));
+      el.appendChild(a);
+    })();
+
+    // 서울 실시간 시계
     function updateTime() {
-      const t = new Intl.DateTimeFormat('en-US', {
+      var t = new Intl.DateTimeFormat('en-US', {
         timeZone: 'Asia/Seoul',
         hour: '2-digit',
-        min
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      }).format(new Date());
+      var el = document.getElementById('live-time');
+      if (el) el.textContent = t;
+    }
+    updateTime();
+    setInterval(updateTime, 1000);
+  </script>
+
+</body>
+</html>
